@@ -7,24 +7,132 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Dashboard</h1>
-        <nav>
-            <ul>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="index.html">Logout</a></li>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i> <!-- Example logo icon -->
+                <span>Dashboard</span>
+            </div>
+            <ul class="menu">
+                <li class="active">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-globe"></i>
+                        <span>activity log</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-search"></i>
+                        <span>account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>monitoring</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-eye"></i>
+                        <span>settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-list-alt"></i>
+                        <span>need help?</span>
+                    </a>
+                </li>
             </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>Your Stats</h2>
-            <p>Total Projects: 5</p>
-            <p>Tasks Completed: 12</p>
-        </section>
-    </main>
-
+        </div>
+        <div class="main-content">
+            <header>
+                <h2>Dashboard</h2>
+                <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search database">
+        <button class="search-btn">
+            <i class="fas fa-search"></i> <!-- Magnifying Glass Icon -->
+        </button>
+    </div>
+            </header>
+            <!-- gradient color change-->
+            <div class="spacer"></div>
+            <div class="charts-container">
+                <div class="chart-item" id="cdnUsageChartContainer">
+                    <h3>CDN Usage</h3>
+                    <canvas id="cdnUsageChart"></canvas>
+                </div>
+                <div class="chart-item" id="dataTransferChartContainer">
+                    <h3>Data Transfer</h3>
+                    <canvas id="dataTransferChart"></canvas>
+                </div>
+                <div class="chart-item" id="uniqueVisitsChartContainer">
+                    <h3>Unique Visits</h3>
+                    <canvas id="uniqueVisitsChart"></canvas>
+                </div>
+                <div class="chart-item" id="userListContainer">
+                    <h3>User List</h3>
+                    <div class="user-list-container">
+                        <ul class="user-list">
+                            <li>
+                                <span class="username">John Doe &nbsp;&nbsp;&nbsp; Risk High &#9888;</span>
+                                <button class="manual-review-btn">Manual Review</button>
+                            </li>
+                            <li>
+                                <span class="username">Jane Smith   &nbsp;&nbsp;&nbsp;  Risk High &#9888; </span>
+                                <button class="manual-review-btn">Manual Review</button>
+                            </li>
+                            <li>
+                                <span class="username">Alice Johnson &nbsp;&nbsp;&nbsp; Risk High &#9888;</span>
+                                <button class="manual-review-btn">Manual Review</button>
+                            </li>
+                            <li>
+                                <span class="username">Bob Brown &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Risk High &#9888;</span>
+                                <button class="manual-review-btn">Manual Review</button>
+                            </li>
+                            <!-- Add more users as needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- gradient color change-->
+            <div class="spacer"></div>
+            <div class="site-list">
+                <h3>General data</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>active users</td>
+                            <td>199,452,201</td>
+                        </tr>
+                        <tr>
+                            <td>total users</td>
+                            <td>906,400,25</td>
+                        </tr>
+                        <tr>
+                            <td>model version</td>
+                            <td>1.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>

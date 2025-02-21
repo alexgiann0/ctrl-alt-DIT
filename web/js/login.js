@@ -24,4 +24,28 @@ document.addEventListener('DOMContentLoaded', () => {
             raindrop.remove();
         });
     });
-});
+
+    // Form validation
+    const loginForm = document.getElementById('loginForm');
+
+    // Hardcoded credentials for demonstration purposes
+    const validUsername = 'admin';
+    const validPassword = 'password';
+
+    // Add a submit event listener to the form
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get the input values
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        // Validate the credentials
+        if (username === validUsername && password === validPassword) {
+            //alert('Login successful!');
+            window.location.href = 'dashboard.html'; // Redirect to the dashboard
+        } else {
+            alert('Invalid credentials. Please try again.');
+        }
+    });
+}); 

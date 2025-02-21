@@ -1,16 +1,329 @@
+/* styles.css  #1a1a1a #142b40 */
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom, #1a1a1a, #2a204f);
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px; /* Fixed width for the sidebar */
+    background: #1a1a1a; /* Dark background */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.sidebar .logo i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7); /* Lighter text color */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu li a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.menu li a span {
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.menu li a:hover {
+    background: rgba(255, 255, 255, 0.1); /* Slightly brighter background on hover */
+    color: white;
+}
+
+/* Active State */
+.menu li.active a {
+    background: #ff7e5f; /* Highlight color for active item */
+    color: white;
+}
+
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    background: #2a2a2a;
+    color: white;
+    padding: 20px;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
-main {
-    margin: 20px;
-    text-align: center;
+/* Modern Scrollbar for WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Track color */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff7e5f; /* Thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Optional border around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #feb47b; /* Hover effect for the thumb */
+}
+
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 300px; /* Adjust width as needed */
+}
+
+/* Search Input Field */
+.search-bar {
+    width: 70%;
+    padding: 10px 30px 10px 15px; /* Add padding for the icon */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: white;
+    font-size: 1rem;
+    outline: none; /* Remove default focus outline */
+    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Placeholder Styling */
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.5); /* Lighter placeholder text */
+    transition: color 0.3s ease; /* Smooth transition for placeholder */
+}
+
+/* Focus Effect */
+.search-bar:focus {
+    background: rgba(255, 255, 255, 0.2); /* Slightly brighter background on focus */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.search-bar:focus::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Brighter placeholder text on focus */
+}
+
+/* Search Button */
+.search-btn {
+    position: absolute;
+    right: 5px; /* Position near the edge of the input */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.search-btn:hover {
+    color: #ff9800; /* Change icon color on hover */
+}
+
+/* Modern Scrollbar for Firefox */
+html {
+    scrollbar-width: thin; /* Options: auto | thin | none */
+    scrollbar-color: #ffffff rgb(0, 0, 0); /* Thumb and track colors */
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#cdnUsageChartContainer {
+    grid-column: 1 / 2; /* First column */
+    grid-row: 1 / 2; /* First row */
+}
+
+#dataTransferChartContainer {
+    grid-column: 2 / 3; /* Second column */
+    grid-row: 1 / 2; /* First row */
+}
+
+#uniqueVisitsChartContainer {
+    grid-column: 1 / 2; /* First column */
+    grid-row: 2 / 3; /* Second row */
+}
+
+#resourceUsageChartContainer {
+    grid-column: 2 / 3; /* Second column */
+    grid-row: 2 / 3; /* Second row */
+}
+
+.search-profile input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 20px; /* Space between grid items */
+}
+
+.chart-item {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#resourceUsageChartContainer {
+    width: 93%; /* Sets the width to 50% of the parent container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* User List Container */
+#userListContainer {
+    width: 48%; /* Same as other charts */
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* User List Styling */
+.user-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.user-list li {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between username and button */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.username {
+    font-size: 1rem;
+    color: white;
+}
+
+.manual-review-btn {
+    background-color: #ff9800; /* Orange button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.manual-review-btn:hover {
+    background-color: #e68a00; /* Darker orange on hover */
+}
+
+
+#userListContainer {
+    width: 93%; /* Sets the width to 50% of the parent container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+#user-list {
+    width: 100%; /* Ensures the canvas scales with the container */
+    height: auto;
+}
+
+#uniqueVisitsChartContainer {
+    width: 93%; /* Sets the width to 50% of the parent container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+#uniqueVisitsChart {
+    width: 100%; /* Ensures the canvas scales with the container */
+    height: auto;
+}
+
+.site-list {
+    margin-top: 20px;
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.site-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.site-list th, .site-list td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #444;
 }
