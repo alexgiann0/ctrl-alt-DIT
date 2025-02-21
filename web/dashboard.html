@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="dashboard-container">
@@ -15,55 +17,57 @@
                 <span>Dashboard</span>
             </div>
             <ul class="menu">
-                <li class="active">
+                <li class="active" data-page="dashboard">
                     <a href="#">
                         <i class="fas fa-home"></i>
                         <span>Analytics</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-globe"></i>
-                        <span>activity log</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                        <span>account</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-puzzle-piece"></i>
-                        <span>monitoring</span>
-                    </a>
-                </li>
-                <li>
+                <li data-page="monitoring">
                     <a href="#">
                         <i class="fas fa-eye"></i>
-                        <span>settings</span>
+                        <span>Monitoring</span>
                     </a>
                 </li>
-                <li>
+                <li data-page="service status">
                     <a href="#">
-                        <i class="fas fa-list-alt"></i>
-                        <span>need help?</span>
+                        <i class="fas fa-globe"></i>
+                        <span>service status</span>
+                    </a>
+                </li>
+                <li data-page="account">
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li data-page="settings">
+                    <a href="#">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li data-page="help">
+                    <a href="#">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Need Help?</span>
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="main-content">
+
+        <!-- Main Content -->
+        <div class="main-content" id="main-content">
+            <!-- Default Dashboard Content -->
             <header>
                 <h2>Dashboard</h2>
                 <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Search database">
-        <button class="search-btn">
-            <i class="fas fa-search"></i> <!-- Magnifying Glass Icon -->
-        </button>
-    </div>
+                    <input type="text" class="search-bar" placeholder="Search database">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i> <!-- Magnifying Glass Icon -->
+                    </button>
+                </div>
             </header>
-            <!-- gradient color change-->
             <div class="spacer"></div>
             <div class="charts-container">
                 <div class="chart-item" id="cdnUsageChartContainer">
@@ -98,15 +102,13 @@
                                 <span class="username">Bob Brown &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Risk High &#9888;</span>
                                 <button class="manual-review-btn">Manual Review</button>
                             </li>
-                            <!-- Add more users as needed -->
                         </ul>
                     </div>
                 </div>
             </div>
-            <!-- gradient color change-->
             <div class="spacer"></div>
             <div class="site-list">
-                <h3>General data</h3>
+                <h3>General Data</h3>
                 <table>
                     <thead>
                         <tr>
@@ -116,15 +118,15 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>active users</td>
+                            <td>Active Users</td>
                             <td>199,452,201</td>
                         </tr>
                         <tr>
-                            <td>total users</td>
+                            <td>Total Users</td>
                             <td>906,400,25</td>
                         </tr>
                         <tr>
-                            <td>model version</td>
+                            <td>Model Version</td>
                             <td>1.00</td>
                         </tr>
                     </tbody>

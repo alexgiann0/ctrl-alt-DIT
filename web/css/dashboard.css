@@ -327,3 +327,346 @@ header {
     text-align: left;
     border-bottom: 1px solid #444;
 }
+
+/* styles.css */
+
+/* Account Page Styling */
+.account-page {
+    padding: 20px;
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a); /* Gradient background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.account-page h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:  #9eadf6; /* Highlighted heading */
+}
+
+.operator-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Hover animation */
+}
+
+.operator-details:hover {
+    transform: translateY(-5px); /* Slight lift-up effect */
+}
+
+.operator-details h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.operator-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.operator-details .label {
+    font-weight: bold;
+    color:  #5f7aff; /* Highlight labels */
+}
+
+.account-page form {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-page label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.account-page input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.account-page input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02); /* Slight zoom effect on focus */
+}
+
+.account-page button {
+    padding: 10px;
+    background: linear-gradient(90deg, #7f7bfe, #5f7aff); /* Gradient button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.account-page button:hover {
+    background: linear-gradient(90deg, #7f7bfe, #5f7aff); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* styles.css */
+
+/* Settings Page Styling */
+.settings-page {
+    padding: 20px;
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a); /* Gradient background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.settings-page h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff7e5f; /* Highlighted heading */
+}
+
+.settings-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Hover animation */
+}
+
+.settings-section:hover {
+    transform: translateY(-5px); /* Slight lift-up effect */
+}
+
+.settings-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.settings-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.settings-option label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ff7e5f;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Slider Range */
+.range-slider {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.range-slider input[type="range"] {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff7e5f;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff7e5f;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* styles.css */
+
+/* Help Page Styling */
+.help-page {
+    padding: 20px;
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a); /* Gradient background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.help-page h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff7e5f; /* Highlighted heading */
+}
+
+.help-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Hover animation */
+}
+
+.help-section:hover {
+    transform: translateY(-5px); /* Slight lift-up effect */
+}
+
+.help-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.help-section p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.help-section ul {
+    margin-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* styles.css */
+
+/* Service Status Page Styling */
+.service-status-page {
+    padding: 20px;
+    background: linear-gradient(135deg, #3a3a3a, #4a4a4a); /* Gradient background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.service-status-page h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff7e5f; /* Highlighted heading */
+}
+
+.status-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Hover animation */
+}
+
+.status-section:hover {
+    transform: translateY(-5px); /* Slight lift-up effect */
+}
+
+.status-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.status-indicator.active {
+    background: #4caf50; /* Green for active */
+}
+
+.status-indicator.inactive {
+    background: #f44336; /* Red for inactive */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+    70% {
+        box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.3);
+    }
+}
+
+.status-details {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.status-details p {
+    margin: 5px 0;
+}
