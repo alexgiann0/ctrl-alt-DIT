@@ -1,0 +1,250 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(76, 175, 149, 0.8), rgba(255, 255, 255, 0));
+    z-index: -1;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.particles::before,
+.particles::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: particle-float 10s infinite ease-in-out;
+}
+
+.particles::before {
+    top: 20%;
+    left: 30%;
+    animation-duration: 8s;
+}
+
+.particles::after {
+    top: 50%;
+    left: 70%;
+    animation-duration: 12s;
+}
+    
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: relative;
+}
+
+
+/* Wave Background Container */
+.wave-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind other content */
+    overflow: hidden;
+}
+
+/* Wave Animation */
+@keyframes wave-animation {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-10%) translateY(-10px);
+    }
+    50% {
+        transform: translateX(-25%) translateY(0);
+    }
+    75% {
+        transform: translateX(-40%) translateY(10px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Wave Styling */
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%; /* Make waves wider than the viewport */
+    height: 100px;
+    background: rgba(76, 175, 80, 0.3); /* Semi-transparent green */
+    background: linear-gradient(to right, rgba(76, 175, 80, 0.3), rgba(76, 175, 80, 0.1));
+    border-radius: 50%;
+    animation: wave-animation 10s infinite linear;
+}
+
+.wave1 {
+    animation: wave-animation 9s infinite linear;
+    animation-duration: 10s;
+    opacity: 0.8;
+}
+
+.wave2 {
+    animation: wave-animation 18s infinite linear;
+    animation-duration: 15s;
+    opacity: 0.6;
+    transform: translateY(-50px);
+}
+
+.wave3 {
+    animation: wave-animation 14s infinite linear;
+    animation-duration: 20s;
+    opacity: 0.4;
+    transform: translateY(-100px);
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #a0c6f4;
+}
+
+header p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-form h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.login-form label {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #12597b;
+    outline: none;
+}
+
+/* Raindrop Animation */
+@keyframes raindrop {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* General Button Styling */
+.login-form button {
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #515c92;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden; /* Ensures the animation stays within the button */
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #1d6c7c;
+}
+
+/* Dynamic Raindrop Effect */
+.raindrop {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 50%;
+    transform: scale(0);
+    animation: raindrop 0.5s ease-out;
+    pointer-events: none; /* Ensures the animation doesn't interfere with clicks */
+}
+
+.login-form button:active::after {
+    animation: raindrop 0.5s ease-out;
+}
+
+.signup-link {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.signup-link a {
+    color: #7072a4;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+}
