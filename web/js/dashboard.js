@@ -236,6 +236,16 @@ document.addEventListener('DOMContentLoaded', function () {
             
 
         } else if (pageName === 'monitoring') {
+            const userInfo2 = {
+                name: "George",
+                customer_id: 11,
+                flag_date: "22/2/2025",
+                flagged_score: 500,
+                rolling_avg_10day: 10,
+                wager_amount: 100,
+                score: 999
+            };
+            
             const userName = user || "Unknown User";
             const userInfo = userData[userName] || {
             gender: "N/A",
@@ -245,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 totalAmount: "N/A",
                 countPerGameType: {},
             },
-            };
+        };
 
             // Generate transaction details table
             let transactionDetails = Object.entries(userInfo.transactions.countPerGameType)
@@ -269,31 +279,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 </header>
                 <div class="monitoring-page">
-                    <h3>Monitoring Details for ${userName}</h3>
-                    <div class="user-details">
-                        <p><strong>Name:</strong> ${userName}</p>
-                        <p><strong>Gender:</strong> ${userInfo.gender}</p>
-                        <p><strong>Age:</strong> ${userInfo.age}</p>
+                    <h3>Monitoring Details for: ${userInfo2.name}</h3>
+
+                    <h3>Customer ID: ${userInfo2.customer_id}</h3>
+                    <h3>Flag date: ${userInfo2.flag_date}</h3>
+                    <h3>Flagged Score: ${userInfo2.flagged_score}</h3>
+                    <h3>Rolling 10-day average: ${userInfo2.rolling_avg_10day}</h3>
+                    <h3>wager amount: ${userInfo2.wager_amount}</h3>
+
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                        <img src="./graph1.PNG" alt="Graph 1" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
+                        <img src="./graph2.PNG" alt="Graph 2" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
                     </div>
-                    <div class="transaction-summary">
-                        <h4>Transaction Summary</h4>
-                        <p><strong>Frequency:</strong> ${userInfo.transactions.frequency}</p>
-                        <p><strong>Total Amount:</strong> ${userInfo.transactions.totalAmount}</p>
+                    <div style="display: flex; justify-content: center;">
+                        <img src="./graph4.PNG" alt="Graph 3" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
                     </div>
-                    <div class="transaction-details">
-                        <h4>Transaction Count Per Game Type</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Game Type</th>
-                                    <th>Count</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${transactionDetails}
-                            </tbody>
-                        </table>
-                    </div>
+                    
+
+
                 </div>
             `;
 
