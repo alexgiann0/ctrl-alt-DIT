@@ -82,8 +82,64 @@ document.addEventListener('DOMContentLoaded', function () {
         new Chart(document.getElementById('uniqueVisitsChart'), uniqueVisitsConfig);
     }
 
+    // Mock user data for demonstration
+    const userData = {
+        "John Doe": {
+            gender: "Male",
+            age: 30,
+            transactions: {
+                frequency: "Daily",
+                totalAmount: "$5,000",
+                countPerGameType: {
+                    "Slot Machines": 50,
+                    "Poker": 30,
+                    "Blackjack": 20
+                }
+            }
+        },
+        "Jane Smith": {
+            gender: "Female",
+            age: 25,
+            transactions: {
+                frequency: "Weekly",
+                totalAmount: "$2,500",
+                countPerGameType: {
+                    "Slot Machines": 40,
+                    "Poker": 10,
+                    "Blackjack": 5
+                }
+            }
+        },
+        "Alice Johnson": {
+            gender: "Female",
+            age: 35,
+            transactions: {
+                frequency: "Monthly",
+                totalAmount: "$10,000",
+                countPerGameType: {
+                    "Slot Machines": 100,
+                    "Poker": 50,
+                    "Blackjack": 30
+                }
+            }
+        },
+        "Bob Brown": {
+            gender: "Male",
+            age: 40,
+            transactions: {
+                frequency: "Daily",
+                totalAmount: "$7,500",
+                countPerGameType: {
+                    "Slot Machines": 70,
+                    "Poker": 40,
+                    "Blackjack": 25
+                }
+            }
+        }
+    };
+
     // Function to load content based on the selected menu item
-    function loadPage(pageName) {
+    function loadPage(pageName,  user = null) {
         // Clear current content
         mainContent.innerHTML = '';
 
@@ -167,6 +223,65 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Reinitialize charts after loading the dashboard content
             initializeCharts();
+
+            const manualReviewButtons = document.querySelectorAll('.manual-review-btn');
+            manualReviewButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const selectedUser = this.getAttribute('data-user');
+                    loadPage('monitoring', selectedUser); // Navigate to Monitoring Page with user info
+                });
+            });
+
+        } else if (pageName === 'monitoring') {
+            const userName = user || 'Unknown User';
+            const userInfo = userData[userName] || {
+                gender: "N/A",
+                age: "N/A",
+                transactions: {
+                    frequency: "N/A",
+                    totalAmount: "N/A",
+                    countPerGameType: {}
+                }
+            };
+
+            // Generate transaction details table
+            let transactionDetails = '';
+            for (const [gameType, count] of Object.entries(userInfo.transactions.countPerGameType)) {
+                transactionDetails += `<tr><td>${gameType}</td><td>${count}</td></tr>`;
+            }
+
+            mainContent.innerHTML = `
+                <header>
+                    <h2>Monitoring</h2>
+                </header>
+                <div class="monitoring-page">
+                    <h3>Monitoring Details for ${userName}</h3>
+                    <div class="user-details">
+                        <p><strong>Name:</strong> ${userName}</p>
+                        <p><strong>Gender:</strong> ${userInfo.gender}</p>
+                        <p><strong>Age:</strong> ${userInfo.age}</p>
+                    </div>
+                    <div class="transaction-summary">
+                        <h4>Transaction Summary</h4>
+                        <p><strong>Frequency:</strong> ${userInfo.transactions.frequency}</p>
+                        <p><strong>Total Amount:</strong> ${userInfo.transactions.totalAmount}</p>
+                    </div>
+                    <div class="transaction-details">
+                        <h4>Transaction Count Per Game Type</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Game Type</th>
+                                    <th>Count</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${transactionDetails}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
         } else if (pageName === 'account') {
             mainContent.innerHTML = `
                 <header>
