@@ -1,9 +1,11 @@
 // js/dashboard.js
 
+
 document.addEventListener('DOMContentLoaded', function () {
+    
     const menuItems = document.querySelectorAll('.menu li');
     const mainContent = document.getElementById('main-content');
-
+    
     // Function to initialize charts
     function initializeCharts() {
         // CDN Usage Chart
@@ -139,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Function to load content based on the selected menu item
-    function loadPage(pageName,  user = null) {
+    async function loadPage(pageName,  user = null) {
         // Clear current content
         mainContent.innerHTML = '';
 
@@ -231,28 +233,40 @@ document.addEventListener('DOMContentLoaded', function () {
                     loadPage('monitoring', selectedUser); // Navigate to Monitoring Page with user info
                 });
             });
+            
 
         } else if (pageName === 'monitoring') {
-            const userName = user || 'Unknown User';
+            const userName = user || "Unknown User";
             const userInfo = userData[userName] || {
-                gender: "N/A",
-                age: "N/A",
-                transactions: {
-                    frequency: "N/A",
-                    totalAmount: "N/A",
-                    countPerGameType: {}
-                }
+            gender: "N/A",
+            age: "N/A",
+            transactions: {
+                frequency: "N/A",
+                totalAmount: "N/A",
+                countPerGameType: {},
+            },
             };
 
             // Generate transaction details table
-            let transactionDetails = '';
-            for (const [gameType, count] of Object.entries(userInfo.transactions.countPerGameType)) {
-                transactionDetails += `<tr><td>${gameType}</td><td>${count}</td></tr>`;
-            }
+            let transactionDetails = Object.entries(userInfo.transactions.countPerGameType)
+            .map(([gameType, count]) => `<tr><td>${gameType}</td><td>${count}</td></tr>`)
+            .join("");
 
+            // Update the UI
             mainContent.innerHTML = `
-                <header>
+                <header class="header-container">
                     <h2>Monitoring</h2>
+
+                    <!-- Custom Dropdown -->
+                    <div class="custom-dropdown">
+                        <div class="dropdown-selected">Select User</div>
+                        <ul class="dropdown-list">
+                            <li data-value="user1">User 1</li>
+                            <li data-value="user2">User 2</li>
+                            <li data-value="user3">User 3</li>
+                        </ul>
+                    </div>
+
                 </header>
                 <div class="monitoring-page">
                     <h3>Monitoring Details for ${userName}</h3>
@@ -282,6 +296,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
             `;
+
+            document.querySelector(".dropdown-selected").addEventListener("click", function () {
+                document.querySelector(".custom-dropdown").classList.toggle("active");
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+                const dropdown = document.querySelector(".custom-dropdown");
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove("active");
+                }
+            });
+            
         } else if (pageName === 'account') {
             mainContent.innerHTML = `
                 <header>

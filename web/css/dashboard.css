@@ -670,3 +670,88 @@ input:checked + .slider:before {
 .status-details p {
     margin: 5px 0;
 }
+
+
+
+/* Modern dropdown styling */
+/* Custom dropdown container */
+.custom-dropdown {
+    position: relative;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 1px;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Selected item (button style) */
+.dropdown-selected {
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dropdown list */
+.dropdown-list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background: #1a1a1a;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show dropdown when active */
+.custom-dropdown.active .dropdown-list {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dropdown items */
+.dropdown-list li {
+    padding: 12px 16px;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Remove last item's border */
+.dropdown-list li:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.dropdown-list li:hover {
+    background: #333;
+}
+
+/* Icon styling */
+.dropdown-selected::after {
+    content: "▼";
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.custom-dropdown.active .dropdown-selected::after {
+    transform: rotate(180deg);
+}
+
+
+    
