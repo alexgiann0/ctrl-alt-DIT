@@ -20,22 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tension: 0.1
             }]
         };
-        //         month,mean_score
-        // 2021-01-01,0.0002862671172934933
-        // 2021-02-01,0.00024181194127832395
-        // 2021-03-01,0.00020472827276394267
-        // 2021-04-01,0.0002253673753764714
-        // 2021-05-01,0.000240497829607859
-        // 2021-06-01,0.000284215286638581
-        // 2021-07-01,0.00027678805265818877
-        // 2021-08-01,0.00027127169031770183
-        // 2021-09-01,0.0002685483482037847
-        // 2021-10-01,0.00027484906754976393
-        // 2021-11-01,0.0002586530493830532
-        // 2021-12-01,0.00028988850999713277
 
-
-
+        
         const cdnUsageConfig = {
             type: 'line',
             data: cdnUsageData,
@@ -46,15 +32,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Data Transfer Chart
         const dataTransferData = {
-            labels: ['Jul 22', '23', '24', '25', '26', '27', '28'],
+            labels: ['2021-01', '2021-02', '2021-03', '2021-04', '2021-05', '2021-06', '2021-07', '2021-08','2021-09','2021-10','2021-11','2021-12'],
             datasets: [{
                 label: 'Data Transfer',
-                data: [10, 20, 30, 40, 50, 60, 70],
+                data: [126, 63, 36, 39, 39, 39, 39, 36, 30, 33, 27, 24],
                 fill: false,
                 borderColor: 'rgba(54, 162, 235, 1)',
                 tension: 0.1
             }]
         };
+
 
         const dataTransferConfig = {
             type: 'line',
@@ -69,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labels: ['Jul 22', '23', '24', '25', '26', '27', '28'],
             datasets: [{
                 label: 'Unique Visits',
-                data: [100, 200, 300, 400, 500, 600, 700],
+                data: [85432, 91876, 103245, 88901, 117654, 94320, 110789],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -89,6 +76,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 borderWidth: 1
             }]
         };
+
+//         85,432
+// 91,876
+// 103,245
+// 88,901
+// 117,654
+// 94,320
+// 110,789
 
         const uniqueVisitsConfig = {
             type: 'bar',
