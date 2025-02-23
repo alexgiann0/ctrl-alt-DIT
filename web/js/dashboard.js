@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Mock user data for demonstration
     const userData = {
-        "John Doe": {
+        "Alex Turing": {
             gender: "Male",
             age: 30,
             transactions: {
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="user-list-container">
                             <ul class="user-list">
                                 <li>
-                                    <span class="username">John Doe &nbsp;&nbsp;&nbsp; Risk High &#9888;</span>
+                                    <span class="username">Alex Turing &nbsp;&nbsp;&nbsp; Risk High &#9888;</span>
                                     <button class="manual-review-btn">Manual Review</button>
                                 </li>
                                 <li>
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         } else if (pageName === 'monitoring') {
             const userInfo2 = {
-                name: "George",
+                name: "Alex Turing",
                 customer_id: 11,
                 flag_date: "2021-01-05",
                 flagged_score:  0.007793606537838146,
@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="account-page">
                     <div class="operator-details">
                         <h3>Operator Details</h3>
-                        <p><span class="label">Name:</span> John Doe</p>
+                        <p><span class="label">Name:</span> Alex Turing</p>
                         <p><span class="label">Email:</span> johndoe@example.com</p>
                         <p><span class="label">Role:</span> Administrator</p>
                         <p><span class="label">Status:</span> Active</p>
