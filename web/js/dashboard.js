@@ -239,11 +239,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const userInfo2 = {
                 name: "George",
                 customer_id: 11,
-                flag_date: "22/2/2025",
-                flagged_score: 500,
-                rolling_avg_10day: 10,
-                wager_amount: 100,
-                score: 999
+                flag_date: "2021-01-05",
+                flagged_score:  0.007793606537838146,
+                last_wager_amount: 50,
             };
             
             const userName = user || "Unknown User";
@@ -284,15 +282,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     <h3>Customer ID: ${userInfo2.customer_id}</h3>
                     <h3>Flag date: ${userInfo2.flag_date}</h3>
                     <h3>Flagged Score: ${userInfo2.flagged_score}</h3>
-                    <h3>Rolling 10-day average: ${userInfo2.rolling_avg_10day}</h3>
-                    <h3>wager amount: ${userInfo2.wager_amount}</h3>
+                    <h3>last wager amount: ${userInfo2.last_wager_amount}</h3>
 
                     <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                        <img src="./graph1.PNG" alt="Graph 1" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
-                        <img src="./graph2.PNG" alt="Graph 2" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
+                        <img src="./graph11.PNG" alt="Graph 1" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
+                        <img src="./graph12.PNG" alt="Graph 2" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
                     </div>
-                    <div style="display: flex; justify-content: center;">
-                        <img src="./graph4.PNG" alt="Graph 3" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                        <img src="./graph13.PNG" alt="Graph 3" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
+                        <img src="./graph14.PNG" alt="Graph 4" style="width: 48%; height: auto; border-radius: 15px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);">
                     </div>
                     
 
