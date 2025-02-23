@@ -77,13 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }]
         };
 
-//         85,432
-// 91,876
-// 103,245
-// 88,901
-// 117,654
-// 94,320
-// 110,789
 
         const uniqueVisitsConfig = {
             type: 'bar',
