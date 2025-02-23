@@ -10,16 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
     function initializeCharts() {
         // CDN Usage Chart
         const cdnUsageData = {
-            labels: ['Jul 1', 'Jul 7', 'Jul 14', 'Jul 21', 'Jul 28'],
+            labels: ['2021-01-01', '2021-02-01', '2021-03-01', '2021-04-01', '2021-05-01', '2021-06-01', '2021-07-01', '2021-08-01', '2021-09-01', '2021-10-01', '2021-11-01', '2021-12-01'],
             datasets: [{
-                label: 'CDN Usage',
-                data: [30, 40, 60, 80, 120],
+                label: 'Avg Score',
+                data: [0.0002862671172934933, 0.00024181194127832395, 0.00020472827276394267, 0.0002253673753764714, 0.000240497829607859, 0.000284215286638581, 0.00027678805265818877, 0.00027127169031770183, 0.00027484906754976393, 0.00027484906754976393, 0.0002586530493830532, 0.00028988850999713277],
                 fill: true,
                 backgroundColor: 'rgba(255, 99, 132, 0.2)',
                 borderColor: 'rgba(255, 99, 132, 1)',
                 tension: 0.1
             }]
         };
+        //         month,mean_score
+        // 2021-01-01,0.0002862671172934933
+        // 2021-02-01,0.00024181194127832395
+        // 2021-03-01,0.00020472827276394267
+        // 2021-04-01,0.0002253673753764714
+        // 2021-05-01,0.000240497829607859
+        // 2021-06-01,0.000284215286638581
+        // 2021-07-01,0.00027678805265818877
+        // 2021-08-01,0.00027127169031770183
+        // 2021-09-01,0.0002685483482037847
+        // 2021-10-01,0.00027484906754976393
+        // 2021-11-01,0.0002586530493830532
+        // 2021-12-01,0.00028988850999713277
+
+
 
         const cdnUsageConfig = {
             type: 'line',
@@ -160,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="spacer"></div>
                 <div class="charts-container">
                     <div class="chart-item" id="cdnUsageChartContainer">
-                        <h3>CDN Usage</h3>
+                        <h3>Avg Score</h3>
                         <canvas id="cdnUsageChart"></canvas>
                     </div>
                     <div class="chart-item" id="dataTransferChartContainer">
